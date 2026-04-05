@@ -2,7 +2,7 @@
 A cloud-native AI orchestration system that uses a Manager-Worker architecture to coordinate specialized agents for task execution, scheduling, and persistent data management.
 
 🔗 Live Demo & Verification
-Check the live API status here: 👉 Interactive API Documentation (Swagger UI)
+[👉 Click here to test the Live API](https://assistant-api-436405208006.us-central1.run.app/docs)
 
 📖 Project Overview
 This project implements an Agentic Workflow using Google Cloud Platform. It moves beyond standard chatbots by using a Primary Agent to interpret natural language and automatically delegate specialized tasks to Sub-Agents.
