@@ -1,21 +1,52 @@
-This is my Live API Documentation (Swagger UI) link!
+🚀 Multi-Agent Productivity Assistant
+A cloud-native AI orchestration system that uses a Manager-Worker architecture to coordinate specialized agents for task execution, scheduling, and persistent data management.
 
-When you open this URL, it provides a visual interface for anyone to test your Multi-Agent Assistant without writing code.
+🔗 Live Demo & Verification
+Check the live API status here: 👉 Interactive API Documentation (Swagger UI)
 
-What the Judges will see when they click this:
-Project Title: "Multi-Agent Productivity Assistant" at the top.
+📖 Project Overview
+This project implements an Agentic Workflow using Google Cloud Platform. It moves beyond standard chatbots by using a Primary Agent to interpret natural language and automatically delegate specialized tasks to Sub-Agents.
 
-POST /ask: The main entry point where they can type a prompt like "Schedule a sync for 3 PM" and see the Primary Agent coordinate the Sub-Agent.
+Every interaction is logged in a structured Firestore database, allowing the assistant to maintain a long-term "memory" of tasks and user requests.
 
-GET /history: The retrieval endpoint that pulls your stored logs from Firestore.
+Key Features:
+Intelligent Intent Routing: Automatically distinguishes between general queries and actionable tasks (like scheduling).
 
-How to use this for your Demo Video:
-Step 1: Open that link in your browser.
+Sub-Agent Delegation: Specialized logic handles tool-based interactions (Calendar/Task simulation).
 
-Step 2: Click on the POST /ask dropdown, then click "Try it out".
+Structured Persistent Memory: Integrated with Google Cloud Firestore to store and retrieve interaction logs.
 
-Step 3: Enter a prompt in the box, hit "Execute", and show the JSON response.
+Scalable Architecture: Fully containerized and deployed as a serverless REST API.
 
-Step 4: Scroll down to GET /history, hit "Execute", and show the list of previous interactions being retrieved from the database.
+🛠️ Tech Stack
+LLM: Vertex AI (Gemini 1.5 Flash)
 
-This link is the "Cloud Run Deployment Link" required for your submission. You are officially ready to submit!
+Backend: Python & FastAPI
+
+Database: Google Cloud Firestore (NoSQL)
+
+Infrastructure: Google Cloud Run (Serverless)
+
+CI/CD: Docker, Artifact Registry, and Google Cloud Build
+
+🚀 How to Verify the Live Project
+Navigate to the Live Swagger UI.
+
+Test the Agent: * Expand the POST /ask endpoint.
+
+Click "Try it out".
+
+Enter a prompt: {"prompt": "Schedule a meeting for 4 PM tomorrow"} and hit Execute.
+
+Verify: See the primary_agent_decision field showing the coordination with sub-agents.
+
+Check the Database Retrieval:
+
+Expand the GET /history endpoint.
+
+Click "Try it out" and then Execute.
+
+Verify: See the list of previous interactions retrieved directly from Firestore.
+
+🏗️ Architecture Flow
+User Input → FastAPI → Primary Agent (Gemini) → Sub-Agent Execution → Firestore Logging → Result
